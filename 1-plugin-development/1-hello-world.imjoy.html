@@ -26,11 +26,12 @@
 
 class ImJoyPlugin {
     async setup() {
-      api.log('initialized')
+      await api.log('initialized')
     }
 
     async run(ctx) {
-      api.alert('hello world.')
+      const name = await api.prompt("your name is")
+      await api.alert('hello ' + name)
     }
 }
 
